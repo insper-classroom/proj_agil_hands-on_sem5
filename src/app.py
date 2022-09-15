@@ -5,21 +5,6 @@ from model.db import delete_query, select_query, insert_query, update_query
 
 
 app = Flask(__name__)
-app.list_of_dicts = []
-
-
-def todos_registrados():
-    return app.list_of_dicts[:1000]
-
-def buscar_registrado_por_ean(ean):
-
-    for reg in app.list_of_dicts:
-        if ean == reg['ean']:
-            return reg, True
-    
-    return None, False
-
-
 
 @app.route("/")
 def hello_world():
